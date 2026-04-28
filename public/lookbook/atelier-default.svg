@@ -1,0 +1,17 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#2B1C18"/>
+  <rect x="48" y="48" width="804" height="1104" rx="44" fill="url(#paint0_linear)"/>
+  <circle cx="450" cy="170" r="88" fill="#E5C6A2"/>
+  <path d="M356 286C356 238 394 200 442 200H458C506 200 544 238 544 286V442H356V286Z" fill="#A4722D"/>
+  <path d="M312 406L238 978H662L588 406H312Z" fill="#F2DDC0"/>
+  <path d="M252 982C350 912 550 912 648 982" stroke="#C4746D" stroke-width="14" stroke-linecap="round"/>
+  <text x="106" y="112" fill="#FFF4E4" font-family="serif" font-size="52">New Atelier Design</text>
+  <text x="106" y="162" fill="#F2D0A6" font-family="sans-serif" font-size="24" letter-spacing="8">STITCH STORY CMS</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="100" y1="68" x2="770" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7B4B36"/>
+      <stop offset="0.48" stop-color="#B37C49"/>
+      <stop offset="1" stop-color="#EBD7B4"/>
+    </linearGradient>
+  </defs>
+</svg>

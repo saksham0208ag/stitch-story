@@ -1,0 +1,25 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#2B1C18"/>
+  <rect x="40" y="40" width="820" height="1120" rx="40" fill="url(#paint0_linear)"/>
+  <path d="M450 212C498 212 540 250 540 298V412H360V298C360 250 402 212 450 212Z" fill="#B86D4F"/>
+  <path d="M326 418H574L648 976H252L326 418Z" fill="#D7A24A"/>
+  <path d="M326 418L252 976" stroke="#F6D391" stroke-width="8" stroke-dasharray="10 14"/>
+  <path d="M574 418L648 976" stroke="#F6D391" stroke-width="8" stroke-dasharray="10 14"/>
+  <path d="M450 318L516 380" stroke="#FBE3AF" stroke-width="16" stroke-linecap="round"/>
+  <path d="M450 318L384 380" stroke="#FBE3AF" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="450" cy="144" r="76" fill="#EBD1AD"/>
+  <circle cx="450" cy="570" r="144" fill="url(#paint1_radial)" opacity="0.75"/>
+  <text x="90" y="108" fill="#FFF4E4" font-family="serif" font-size="48">Amber Sitara</text>
+  <text x="90" y="156" fill="#F5DAB5" font-family="sans-serif" font-size="24" letter-spacing="8">BRIDAL COUTURE</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="100" y1="100" x2="760" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3027"/>
+      <stop offset="0.5" stop-color="#B86D4F"/>
+      <stop offset="1" stop-color="#E7B24A"/>
+    </linearGradient>
+    <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(450 570) rotate(90) scale(260)">
+      <stop stop-color="#FFE7A6"/>
+      <stop offset="1" stop-color="#FFE7A6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

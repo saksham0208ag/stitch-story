@@ -1,0 +1,19 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#ECE3D8"/>
+  <rect x="40" y="40" width="820" height="1120" rx="40" fill="url(#paint0_linear)"/>
+  <circle cx="450" cy="150" r="78" fill="#F4EAE0"/>
+  <path d="M378 242C378 206 407 177 443 177H457C493 177 522 206 522 242V446H378V242Z" fill="#A9917A"/>
+  <path d="M522 308L664 936H342L522 308Z" fill="#EDE3D5"/>
+  <path d="M378 446L278 980H612L522 446H378Z" fill="#C8B29B"/>
+  <path d="M378 446C466 420 540 454 600 548" stroke="#B58C6A" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="652" cy="778" r="110" fill="#B58C6A" fill-opacity="0.18"/>
+  <text x="90" y="110" fill="#5A4A3E" font-family="serif" font-size="48">Marble Courtyard</text>
+  <text x="90" y="158" fill="#8D7868" font-family="sans-serif" font-size="24" letter-spacing="8">OCCASION EDIT</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="100" y1="70" x2="770" y2="1110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAF7F1"/>
+      <stop offset="0.45" stop-color="#DDD0C0"/>
+      <stop offset="1" stop-color="#B89D84"/>
+    </linearGradient>
+  </defs>
+</svg>

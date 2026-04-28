@@ -1,0 +1,20 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#FCF4E6"/>
+  <rect x="40" y="40" width="820" height="1120" rx="40" fill="url(#paint0_linear)"/>
+  <circle cx="450" cy="152" r="78" fill="#F1D8BE"/>
+  <path d="M348 232H552V664H348V232Z" fill="#EAE0D1"/>
+  <path d="M300 364L222 930H678L600 364H300Z" fill="#C77045"/>
+  <path d="M320 250C356 220 400 204 450 204C500 204 544 220 580 250" stroke="#254F43" stroke-width="14" stroke-linecap="round"/>
+  <path d="M324 298H576" stroke="#A4722D" stroke-width="10" stroke-dasharray="10 16"/>
+  <path d="M334 354H566" stroke="#A4722D" stroke-width="10" stroke-dasharray="10 16"/>
+  <path d="M344 410H556" stroke="#A4722D" stroke-width="10" stroke-dasharray="10 16"/>
+  <text x="92" y="112" fill="#5A3728" font-family="serif" font-size="48">Sanganeri Mehfil</text>
+  <text x="92" y="160" fill="#8B614B" font-family="sans-serif" font-size="24" letter-spacing="8">FESTIVE STORY</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="100" y1="72" x2="760" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF9F0"/>
+      <stop offset="0.42" stop-color="#F3D4BE"/>
+      <stop offset="1" stop-color="#D1875A"/>
+    </linearGradient>
+  </defs>
+</svg>
