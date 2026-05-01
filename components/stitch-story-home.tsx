@@ -94,52 +94,52 @@ export function StitchStoryHome({
 
   return (
     <div className="site-shell">
-      <div className="page-grid mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-10 px-4 py-6 text-[15px] text-stone-800 sm:px-6 lg:px-8">
-        <header className="section-card fade-rise flex flex-col gap-8 rounded-[2rem] px-6 py-6 sm:px-8 lg:px-10">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+      <div className="page-grid mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-8 px-3 py-4 text-[15px] text-stone-800 sm:gap-10 sm:px-6 sm:py-6 lg:px-8">
+        <header className="section-card fade-rise flex flex-col gap-6 rounded-[1.75rem] px-4 py-5 sm:gap-8 sm:rounded-[2rem] sm:px-8 sm:py-6 lg:px-10">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-3xl space-y-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-stone-500">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-stone-500 sm:text-xs sm:tracking-[0.4em]">
                 Jaipur Couture Concierge
               </p>
               <div className="space-y-4">
-                <h1 className="display-type max-w-3xl text-5xl leading-none text-stone-900 sm:text-6xl">
+                <h1 className="display-type max-w-3xl text-[2.7rem] leading-[0.96] text-stone-900 sm:text-6xl">
                   Stitch Story turns bespoke tailoring into a luxury digital ritual.
                 </h1>
-                <p className="max-w-2xl text-base leading-8 text-stone-700 sm:text-lg">
+                <p className="max-w-2xl text-[15px] leading-7 text-stone-700 sm:text-lg sm:leading-8">
                   Customers save measurements once, reserve fittings in real time, and request
                   customization from a curated Jaipur lookbook. Inside the atelier, owners manage
                   measurements, orders, appointments, and lookbook content from a single premium
                   command center.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
                   href="#measurement-vault"
-                  className="gold-button rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] transition"
+                  className="gold-button w-full rounded-full px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] transition sm:w-auto sm:tracking-[0.28em]"
                 >
                   Build My Fit Profile
                 </a>
                 <a
                   href="#lookbook"
-                  className="outline-button rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] transition"
+                  className="outline-button w-full rounded-full px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] transition sm:w-auto sm:tracking-[0.28em]"
                 >
                   Explore The Lookbook
                 </a>
                 <Link
                   href="/atelier"
-                  className="rounded-full border border-stone-300 px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-stone-700 transition hover:border-stone-500"
+                  className="w-full rounded-full border border-stone-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-stone-700 transition hover:border-stone-500 sm:w-auto sm:tracking-[0.28em]"
                 >
                   Open Owner Dashboard
                 </Link>
               </div>
             </div>
 
-            <div className="mesh-panel section-card-strong w-full max-w-md rounded-[1.75rem] p-6">
-              <div className="flex items-center justify-between">
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+            <div className="mesh-panel section-card-strong w-full max-w-md rounded-[1.75rem] p-5 sm:p-6">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
                   Client Access
                 </p>
-                <span className="rounded-full bg-emerald-900 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.26em] text-amber-50">
+                <span className="w-fit rounded-full bg-emerald-900 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-50 sm:tracking-[0.26em]">
                   Live Demo Store
                 </span>
               </div>
@@ -243,13 +243,13 @@ export function StitchStoryHome({
             id="measurement-vault"
             className="grid gap-6 lg:grid-cols-[1.25fr_0.95fr] xl:gap-8"
           >
-            <div className="section-card-strong fade-rise rounded-[2rem] px-6 py-7 sm:px-8">
+            <div className="section-card-strong fade-rise rounded-[1.75rem] px-4 py-6 sm:rounded-[2rem] sm:px-8 sm:py-7">
               <div className="flex flex-col gap-4 border-b border-stone-200/80 pb-6 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
                     Digital Measurement Vault
                   </p>
-                  <h2 className="display-type mt-3 text-4xl text-stone-900">
+                  <h2 className="display-type mt-3 text-[2rem] leading-tight text-stone-900 sm:text-4xl">
                     Save a client fit profile once and reuse it for every future order.
                   </h2>
                 </div>
@@ -357,17 +357,17 @@ export function StitchStoryHome({
             </div>
 
             <div className="grid gap-6">
-              <div className="section-card rounded-[2rem] p-6">
-                <div className="flex items-center justify-between">
+              <div className="section-card rounded-[1.75rem] p-5 sm:rounded-[2rem] sm:p-6">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
                       How To Measure
                     </p>
-                    <h3 className="display-type mt-3 text-3xl text-stone-900">
+                    <h3 className="display-type mt-3 text-[1.9rem] leading-tight text-stone-900 sm:text-3xl">
                       Visual guidance for accurate tailoring.
                     </h3>
                   </div>
-                  <span className="rounded-full border border-stone-200 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.26em] text-stone-600">
+                  <span className="w-fit rounded-full border border-stone-200 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-stone-600 sm:tracking-[0.26em]">
                     Customer Assist
                   </span>
                 </div>
@@ -394,8 +394,8 @@ export function StitchStoryHome({
                 </div>
               </div>
 
-              <div className="section-card rounded-[2rem] p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+              <div className="section-card rounded-[1.75rem] p-5 sm:rounded-[2rem] sm:p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
                   Customer Snapshot
                 </p>
                 {activeMeasurement ? (
@@ -463,13 +463,13 @@ export function StitchStoryHome({
             id="appointments"
             className="grid gap-6 lg:grid-cols-[1.15fr_0.95fr] xl:gap-8"
           >
-            <div className="section-card-strong rounded-[2rem] px-6 py-7 sm:px-8">
+            <div className="section-card-strong rounded-[1.75rem] px-4 py-6 sm:rounded-[2rem] sm:px-8 sm:py-7">
               <div className="flex flex-col gap-3 border-b border-stone-200/80 pb-6 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
                     Intelligent Appointment Booking
                   </p>
-                  <h2 className="display-type mt-3 text-4xl text-stone-900">
+                  <h2 className="display-type mt-3 text-[2rem] leading-tight text-stone-900 sm:text-4xl">
                     A live boutique calendar for in-store consultations and virtual fittings.
                   </h2>
                 </div>
@@ -478,10 +478,13 @@ export function StitchStoryHome({
                 </p>
               </div>
 
-              <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="touch-scroll mt-6 flex gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 xl:grid-cols-4">
                 {upcomingDates.map((date) => (
-                  <div key={date} className="rounded-[1.6rem] border border-stone-200/70 bg-white/75 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
+                  <div
+                    key={date}
+                    className="min-w-[16.5rem] rounded-[1.6rem] border border-stone-200/70 bg-white/75 p-4 sm:min-w-0"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 sm:tracking-[0.24em]">
                       {formatDateLabel(date)}
                     </p>
                     <div className="mt-4 space-y-3">
@@ -499,15 +502,15 @@ export function StitchStoryHome({
                                 : "border-emerald-200 bg-emerald-50/80 text-emerald-900"
                             }`}
                           >
-                            <div className="flex items-center justify-between gap-3">
+                            <div className="flex flex-wrap items-center justify-between gap-3">
                               <span className="font-semibold">{time}</span>
-                              <span className="text-[11px] uppercase tracking-[0.24em]">
+                              <span className="text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.24em]">
                                 {booking ? "Booked" : "Open"}
                               </span>
                             </div>
                             <p className="mt-2 text-xs leading-5 opacity-75">
                               {booking
-                                ? `${booking.clientName} • ${booking.appointmentType}`
+                                ? `${booking.clientName} / ${booking.appointmentType}`
                                 : "Available for consultation"}
                             </p>
                           </div>
@@ -519,11 +522,11 @@ export function StitchStoryHome({
               </div>
             </div>
 
-            <div className="section-card rounded-[2rem] p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+            <div className="section-card rounded-[1.75rem] p-5 sm:rounded-[2rem] sm:p-6">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
                 Reserve A Slot
               </p>
-              <h3 className="display-type mt-3 text-3xl text-stone-900">
+              <h3 className="display-type mt-3 text-[1.9rem] leading-tight text-stone-900 sm:text-3xl">
                 Book a fitting without waiting for WhatsApp back-and-forth.
               </h3>
 
@@ -645,13 +648,13 @@ export function StitchStoryHome({
             </div>
           </section>
 
-          <section id="lookbook" className="section-card-strong rounded-[2rem] px-6 py-7 sm:px-8">
+          <section id="lookbook" className="section-card-strong rounded-[1.75rem] px-4 py-6 sm:rounded-[2rem] sm:px-8 sm:py-7">
             <div className="flex flex-col gap-4 border-b border-stone-200/80 pb-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
                   Curated Lookbook
                 </p>
-                <h2 className="display-type mt-3 text-4xl text-stone-900">
+                <h2 className="display-type mt-3 text-[2rem] leading-tight text-stone-900 sm:text-4xl">
                   Filter couture collections and send a customization brief in one step.
                 </h2>
               </div>
@@ -661,13 +664,13 @@ export function StitchStoryHome({
               </p>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="touch-scroll -mx-1 mt-6 flex gap-3 overflow-x-auto px-1 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
               {lookbookFilters.map((option) => (
                 <button
                   key={option}
                   type="button"
                   onClick={() => setFilter(option)}
-                  className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] transition ${
+                  className={`shrink-0 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition sm:tracking-[0.26em] ${
                     filter === option
                       ? "bg-stone-900 text-amber-50"
                       : "outline-button text-stone-600"
@@ -684,7 +687,7 @@ export function StitchStoryHome({
                   key={design.id}
                   className="overflow-hidden rounded-[1.8rem] border border-stone-200/80 bg-white/82"
                 >
-                  <div className="relative h-80 overflow-hidden">
+                  <div className="relative h-72 overflow-hidden sm:h-80">
                     <Image
                       src={design.image}
                       alt={design.title}
@@ -692,12 +695,12 @@ export function StitchStoryHome({
                       height={1200}
                       className="h-full w-full object-cover transition duration-700 hover:scale-[1.03]"
                     />
-                    <div className="absolute left-4 top-4 flex gap-2">
-                      <span className="rounded-full bg-stone-900/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-50">
+                    <div className="absolute left-4 top-4 flex max-w-[calc(100%-2rem)] flex-wrap gap-2">
+                      <span className="rounded-full bg-stone-900/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-50 sm:tracking-[0.24em]">
                         {design.category}
                       </span>
                       {design.trending ? (
-                        <span className="rounded-full bg-amber-100/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-900">
+                        <span className="rounded-full bg-amber-100/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-900 sm:tracking-[0.24em]">
                           Trending
                         </span>
                       ) : null}
@@ -732,7 +735,7 @@ export function StitchStoryHome({
                           .getElementById("customization-studio")
                           ?.scrollIntoView({ behavior: "smooth", block: "start" });
                       }}
-                      className="gold-button w-full rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.28em] transition"
+                      className="gold-button w-full rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] transition sm:tracking-[0.28em]"
                     >
                       Request Customization
                     </button>
@@ -743,13 +746,13 @@ export function StitchStoryHome({
 
             <div
               id="customization-studio"
-              className="mt-8 grid gap-6 rounded-[2rem] border border-stone-200/80 bg-white/78 p-6 lg:grid-cols-[0.95fr_1.05fr]"
+              className="mt-8 grid gap-6 rounded-[1.75rem] border border-stone-200/80 bg-white/78 p-4 sm:rounded-[2rem] sm:p-6 lg:grid-cols-[0.95fr_1.05fr]"
             >
-              <div className="rounded-[1.7rem] bg-stone-950 px-6 py-6 text-amber-50">
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-amber-200/80">
+              <div className="rounded-[1.7rem] bg-stone-950 px-5 py-5 text-amber-50 sm:px-6 sm:py-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-amber-200/80 sm:text-xs sm:tracking-[0.32em]">
                   Customization Brief
                 </p>
-                <h3 className="display-type mt-4 text-4xl">
+                <h3 className="display-type mt-4 text-[2rem] leading-tight sm:text-4xl">
                   {selectedDesign?.title ?? "Select a lookbook design"}
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-amber-50/76">

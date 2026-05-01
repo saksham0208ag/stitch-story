@@ -2,10 +2,14 @@
 
 import { revalidatePath } from "next/cache";
 import {
+  createAppointmentBooking,
+  createCustomizationOrder,
   DEFAULT_LOOKBOOK_ART,
-  readDb,
+  publishDesign,
   saveUploadedLookbookAsset,
-  writeDb,
+  toggleDesignTrendingById,
+  updateOrderStatusById,
+  upsertMeasurementProfile,
 } from "@/lib/stitch-story";
 import {
   measurementFields,
@@ -26,21 +30,6 @@ export const INITIAL_ACTION_STATE: ActionState = {
 function parseMetricValue(rawValue: FormDataEntryValue | null) {
   const value = Number.parseFloat(String(rawValue ?? "").trim());
   return Number.isFinite(value) ? value : Number.NaN;
-}
-
-function appendNotification(
-  db: Awaited<ReturnType<typeof readDb>>,
-  email: string,
-  title: string,
-  message: string,
-) {
-  db.notifications.unshift({
-    id: crypto.randomUUID(),
-    email,
-    title,
-    message,
-    createdAt: new Date().toISOString(),
-  });
 }
 
 export async function saveMeasurements(
@@ -70,35 +59,24 @@ export async function saveMeasurements(
     };
   }
 
-  const db = await readDb();
-  const existingProfile = db.measurements.find((profile) => profile.email === email);
-
-  if (existingProfile) {
-    existingProfile.clientName = clientName;
-    existingProfile.notes = notes;
-    existingProfile.updatedAt = new Date().toISOString();
-    existingProfile.metrics = metrics;
-  } else {
-    db.measurements.unshift({
-      id: crypto.randomUUID(),
+  try {
+    await upsertMeasurementProfile({
       clientName,
       email,
       notes,
       metrics,
-      updatedAt: new Date().toISOString(),
     });
+    revalidatePath("/");
+    revalidatePath("/atelier");
+  } catch (error) {
+    return {
+      status: "error",
+      message:
+        error instanceof Error
+          ? error.message
+          : "We could not save measurements right now. Please try again.",
+    };
   }
-
-  appendNotification(
-    db,
-    email,
-    "Measurement vault updated",
-    "Your latest fit profile is saved and ready for future Stitch Story orders.",
-  );
-
-  await writeDb(db);
-  revalidatePath("/");
-  revalidatePath("/atelier");
 
   return {
     status: "success",
@@ -124,39 +102,34 @@ export async function bookAppointment(
     };
   }
 
-  const db = await readDb();
-  const conflict = db.appointments.some(
-    (appointment) => appointment.date === date && appointment.time === time,
-  );
+  try {
+    const result = await createAppointmentBooking({
+      clientName,
+      email,
+      date,
+      time,
+      appointmentType,
+      notes,
+    });
 
-  if (conflict) {
+    if (result === "conflict") {
+      return {
+        status: "error",
+        message: "That slot was just taken. Choose another one and we will reserve it.",
+      };
+    }
+
+    revalidatePath("/");
+    revalidatePath("/atelier");
+  } catch (error) {
     return {
       status: "error",
-      message: "That slot was just taken. Choose another one and we will reserve it.",
+      message:
+        error instanceof Error
+          ? error.message
+          : "We could not book that appointment right now. Please try again.",
     };
   }
-
-  db.appointments.push({
-    id: crypto.randomUUID(),
-    clientName,
-    email,
-    date,
-    time,
-    appointmentType,
-    notes,
-    createdAt: new Date().toISOString(),
-  });
-
-  appendNotification(
-    db,
-    email,
-    "Consultation confirmed",
-    `Your ${appointmentType.toLowerCase()} is booked for ${date} at ${time}.`,
-  );
-
-  await writeDb(db);
-  revalidatePath("/");
-  revalidatePath("/atelier");
 
   return {
     status: "success",
@@ -181,38 +154,33 @@ export async function requestCustomization(
     };
   }
 
-  const db = await readDb();
-  const design = db.designs.find((item) => item.id === designId);
+  try {
+    const result = await createCustomizationOrder({
+      customerName,
+      customerEmail,
+      designId,
+      eventDate,
+      notes,
+    });
 
-  if (!design) {
+    if (result === "missing-design") {
+      return {
+        status: "error",
+        message: "We could not find that design. Pick another lookbook piece.",
+      };
+    }
+
+    revalidatePath("/");
+    revalidatePath("/atelier");
+  } catch (error) {
     return {
       status: "error",
-      message: "We could not find that design. Pick another lookbook piece.",
+      message:
+        error instanceof Error
+          ? error.message
+          : "We could not send that customization request right now. Please try again.",
     };
   }
-
-  db.orders.unshift({
-    id: crypto.randomUUID(),
-    customerName,
-    customerEmail,
-    designId: design.id,
-    designTitle: design.title,
-    status: "Consult Requested",
-    eventDate,
-    notes,
-    createdAt: new Date().toISOString(),
-  });
-
-  appendNotification(
-    db,
-    customerEmail,
-    "Customization request received",
-    `${design.title} is now with the atelier for design review and fit planning.`,
-  );
-
-  await writeDb(db);
-  revalidatePath("/");
-  revalidatePath("/atelier");
 
   return {
     status: "success",
@@ -229,22 +197,7 @@ export async function updateOrderStatus(formData: FormData) {
     return;
   }
 
-  const db = await readDb();
-  const order = db.orders.find((item) => item.id === orderId);
-
-  if (!order) {
-    return;
-  }
-
-  order.status = validatedStatus;
-  appendNotification(
-    db,
-    order.customerEmail,
-    "Order status updated",
-    `${order.designTitle} moved to "${nextStatus}" in the atelier timeline.`,
-  );
-
-  await writeDb(db);
+  await updateOrderStatusById(orderId, validatedStatus);
   revalidatePath("/");
   revalidatePath("/atelier");
 }
@@ -256,15 +209,7 @@ export async function toggleTrending(formData: FormData) {
     return;
   }
 
-  const db = await readDb();
-  const design = db.designs.find((item) => item.id === designId);
-
-  if (!design) {
-    return;
-  }
-
-  design.trending = !design.trending;
-  await writeDb(db);
+  await toggleDesignTrendingById(designId);
   revalidatePath("/");
   revalidatePath("/atelier");
 }
@@ -290,28 +235,35 @@ export async function addDesign(
     };
   }
 
-  const image =
-    designImage instanceof File && designImage.size > 0
-      ? await saveUploadedLookbookAsset(designImage)
-      : DEFAULT_LOOKBOOK_ART;
+  try {
+    const image =
+      designImage instanceof File && designImage.size > 0
+        ? await saveUploadedLookbookAsset(designImage)
+        : DEFAULT_LOOKBOOK_ART;
 
-  const db = await readDb();
-  db.designs.unshift({
-    id: `design-${crypto.randomUUID().slice(0, 8)}`,
-    title,
-    category,
-    silhouette,
-    fabric,
-    description,
-    leadTime,
-    image: image ?? DEFAULT_LOOKBOOK_ART,
-    palette: palette || "Sandstone / Rose / Brass",
-    trending,
-  });
+    await publishDesign({
+      title,
+      category,
+      silhouette,
+      fabric,
+      description,
+      leadTime,
+      image: image ?? DEFAULT_LOOKBOOK_ART,
+      palette: palette || "Sandstone / Rose / Brass",
+      trending,
+    });
 
-  await writeDb(db);
-  revalidatePath("/");
-  revalidatePath("/atelier");
+    revalidatePath("/");
+    revalidatePath("/atelier");
+  } catch (error) {
+    return {
+      status: "error",
+      message:
+        error instanceof Error
+          ? error.message
+          : "We could not publish that design right now. Please try again.",
+    };
+  }
 
   return {
     status: "success",

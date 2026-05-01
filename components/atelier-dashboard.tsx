@@ -60,28 +60,28 @@ export function AtelierDashboard({
 
   return (
     <div className="site-shell">
-      <div className="page-grid mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-10 px-4 py-6 sm:px-6 lg:px-8">
-        <header className="section-card-strong fade-rise rounded-[2rem] px-6 py-7 sm:px-8">
+      <div className="page-grid mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-8 px-3 py-4 sm:gap-10 sm:px-6 sm:py-6 lg:px-8">
+        <header className="section-card-strong fade-rise rounded-[1.75rem] px-4 py-6 sm:rounded-[2rem] sm:px-8 sm:py-7">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.36em] text-stone-500">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-stone-500 sm:text-xs sm:tracking-[0.36em]">
                 Owner Console
               </p>
-              <h1 className="display-type mt-4 text-5xl leading-none text-stone-900 sm:text-6xl">
+              <h1 className="display-type mt-4 text-[2.7rem] leading-[0.96] text-stone-900 sm:text-6xl">
                 Stitch Story&apos;s atelier dashboard keeps fittings, orders, and lookbook content
                 moving in sync.
               </h1>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/"
-                className="outline-button rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-stone-700 transition"
+                className="outline-button w-full rounded-full px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-stone-700 transition sm:w-auto sm:tracking-[0.28em]"
               >
                 Back To Client Experience
               </Link>
               <a
                 href="#cms"
-                className="gold-button rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] transition"
+                className="gold-button w-full rounded-full px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] transition sm:w-auto sm:tracking-[0.28em]"
               >
                 Open CMS
               </a>
@@ -122,13 +122,13 @@ export function AtelierDashboard({
           </div>
         </header>
 
-        <section className="section-card rounded-[2rem] p-6">
+        <section className="section-card rounded-[1.75rem] p-5 sm:rounded-[2rem] sm:p-6">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
                 Search Engine
               </p>
-              <h2 className="display-type mt-3 text-3xl text-stone-900">
+              <h2 className="display-type mt-3 text-[1.9rem] leading-tight text-stone-900 sm:text-3xl">
                 Find customers, orders, and garment progress instantly.
               </h2>
             </div>
@@ -145,13 +145,13 @@ export function AtelierDashboard({
         </section>
 
         <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
-          <div className="section-card-strong rounded-[2rem] px-6 py-7 sm:px-8">
+          <div className="section-card-strong rounded-[1.75rem] px-4 py-6 sm:rounded-[2rem] sm:px-8 sm:py-7">
             <div className="flex flex-col gap-3 border-b border-stone-200/80 pb-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
                   Order And Measurement Management
                 </p>
-                <h2 className="display-type mt-3 text-4xl text-stone-900">
+                <h2 className="display-type mt-3 text-[2rem] leading-tight text-stone-900 sm:text-4xl">
                   Update garment progress and keep every client record close at hand.
                 </h2>
               </div>
@@ -176,7 +176,7 @@ export function AtelierDashboard({
                         </p>
                         <h3 className="text-2xl font-semibold text-stone-900">{order.designTitle}</h3>
                         <p className="text-sm leading-6 text-stone-600">
-                          {order.customerName} • {order.customerEmail}
+                          {order.customerName} / {order.customerEmail}
                         </p>
                         <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.22em] text-stone-500">
                           <span className="rounded-full bg-stone-100 px-3 py-1">
@@ -255,11 +255,11 @@ export function AtelierDashboard({
             </div>
           </div>
 
-          <div className="section-card rounded-[2rem] p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+          <div className="section-card rounded-[1.75rem] p-5 sm:rounded-[2rem] sm:p-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
               Measurement Directory
             </p>
-            <h2 className="display-type mt-3 text-3xl text-stone-900">
+            <h2 className="display-type mt-3 text-[1.9rem] leading-tight text-stone-900 sm:text-3xl">
               Every saved profile is searchable from one boutique-ready list.
             </h2>
             <div className="mt-6 grid gap-4">
@@ -299,13 +299,13 @@ export function AtelierDashboard({
         </section>
 
         <section className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-          <div className="section-card-strong rounded-[2rem] px-6 py-7 sm:px-8">
+          <div className="section-card-strong rounded-[1.75rem] px-4 py-6 sm:rounded-[2rem] sm:px-8 sm:py-7">
             <div className="flex flex-col gap-3 border-b border-stone-200/80 pb-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
                   Appointment Oversight
                 </p>
-                <h2 className="display-type mt-3 text-4xl text-stone-900">
+                <h2 className="display-type mt-3 text-[2rem] leading-tight text-stone-900 sm:text-4xl">
                   Daily and weekly slot visibility for floor and staffing decisions.
                 </h2>
               </div>
@@ -314,10 +314,13 @@ export function AtelierDashboard({
               </p>
             </div>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="touch-scroll mt-6 flex gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 xl:grid-cols-4">
               {upcomingDates.map((date) => (
-                <div key={date} className="rounded-[1.5rem] border border-stone-200/80 bg-white/80 p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
+                <div
+                  key={date}
+                  className="min-w-[16.5rem] rounded-[1.5rem] border border-stone-200/80 bg-white/80 p-4 sm:min-w-0"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500 sm:tracking-[0.24em]">
                     {formatDateLabel(date)}
                   </p>
                   <div className="mt-4 space-y-3">
@@ -338,7 +341,7 @@ export function AtelierDashboard({
                           <p className="font-semibold">{time}</p>
                           <p className="mt-1 text-xs leading-5">
                             {booking
-                              ? `${booking.clientName} • ${booking.appointmentType}`
+                              ? `${booking.clientName} / ${booking.appointmentType}`
                               : "Open slot"}
                           </p>
                         </div>
@@ -350,11 +353,11 @@ export function AtelierDashboard({
             </div>
           </div>
 
-          <div id="cms" className="section-card rounded-[2rem] p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+          <div id="cms" className="section-card rounded-[1.75rem] p-5 sm:rounded-[2rem] sm:p-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.32em]">
               Content Management
             </p>
-            <h2 className="display-type mt-3 text-3xl text-stone-900">
+            <h2 className="display-type mt-3 text-[1.9rem] leading-tight text-stone-900 sm:text-3xl">
               Publish new looks and change trending items without touching the code.
             </h2>
 
@@ -364,16 +367,16 @@ export function AtelierDashboard({
                   key={design.id}
                   className="rounded-[1.5rem] border border-stone-200/80 bg-white/82 p-4"
                 >
-                  <div className="flex gap-4">
+                  <div className="flex flex-col gap-4 sm:flex-row">
                     <Image
                       src={design.image}
                       alt={design.title}
                       width={96}
                       height={112}
-                      className="h-28 w-24 rounded-[1.2rem] object-cover"
+                      className="h-56 w-full rounded-[1.2rem] object-cover sm:h-28 sm:w-24"
                     />
                     <div className="flex-1">
-                      <div className="flex items-start justify-between gap-3">
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                         <div>
                           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
                             {design.category}
@@ -389,8 +392,8 @@ export function AtelierDashboard({
                             pendingLabel="Updating"
                             className={
                               design.trending
-                                ? "rounded-full border border-stone-300 bg-white text-stone-700"
-                                : "gold-button"
+                                ? "w-full rounded-full border border-stone-300 bg-white text-stone-700 sm:w-auto"
+                                : "gold-button w-full sm:w-auto"
                             }
                           />
                         </form>
@@ -402,7 +405,7 @@ export function AtelierDashboard({
               ))}
             </div>
 
-            <form action={addDesignAction} className="mt-8 space-y-4 rounded-[1.6rem] bg-stone-950 px-5 py-5 text-amber-50">
+            <form action={addDesignAction} className="mt-8 space-y-4 rounded-[1.6rem] bg-stone-950 px-4 py-5 text-amber-50 sm:px-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-200/80">
                   Add New Design
